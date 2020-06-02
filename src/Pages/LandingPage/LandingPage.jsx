@@ -1,5 +1,13 @@
 import React from "react";
-import "./LandingPage.scss";
+import Navbar from './Navbar.jsx';
+import Content from './Content.jsx';
 export default function LandingPage() {
-  return <div></div>;
+  return (
+    <div>
+      <Navbar />
+      <Content />
+      
+
+    </div>
+  );
 }
