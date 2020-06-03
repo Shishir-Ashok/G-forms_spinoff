@@ -1,9 +1,14 @@
 import React from "react";
-import useInput from "../../Hooks/useInput";
+import { useInput } from "../../Hooks/useInput";
+import { TextField } from "@material-ui/core";
 
 export default function SignUp() {
   const username = useInput("");
   const email = useInput("");
 
-  return <div></div>;
+  return (
+    <div>
+      <TextField label="Username" {...username}></TextField>
+    </div>
+  );
 }
