@@ -1,12 +1,14 @@
 .OptionalNavbar {
   position: fixed;
-  display: flex;
+  display: grid;
   justify-content: space-between;
   font-family: Montserrat;
   width: 100vw;
   z-index: 30;
+  grid-template-columns: 1fr 1fr;
   margin-top: 2rem;
   align-items: center;
+  z-index: 70;
   .OptionalNavbar-navbarLeft {
     display: flex;
     margin-left: 5rem;
