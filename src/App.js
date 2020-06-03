@@ -16,7 +16,7 @@ export class App extends Component {
         />
         <Route
           exact
-          path="/signUp"
+          path="/logIn"
           render={(routerProps) => <SignUp isSignIn={false} {...routerProps} />}
         />
       </Switch>

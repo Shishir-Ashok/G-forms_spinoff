@@ -1,0 +1,99 @@
+.SignUp-Page-Container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  font-family: Montserrat;
+  .SignUp-Page-Left-tab {
+    width: 40vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .SignUp-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .SignUp-Heading {
+        font-size: 2rem;
+        font-weight: bolder;
+        font-family: Helvetica, sans-serif;
+        position: relative;
+        padding-bottom: 0.6rem;
+        &::after {
+          content: "";
+          position: absolute;
+          height: 6px;
+          width: 60%;
+          background-color: black;
+          bottom: 0;
+          left: 20%;
+        }
+      }
+      .SignUp-Forgot {
+        width: 100%;
+        padding-top: 0.3rem;
+        opacity: 0.6;
+        text-decoration: underline;
+        text-align: end;
+      }
+      .SignUp-Button {
+        width: 100%;
+        height: 7vh;
+        background-image: linear-gradient(120deg, #5433ff 0%, #20bdff 100%);
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        margin-top: 0.7rem;
+      }
+      .SignUp-New {
+        display: flex;
+        width: 100%;
+        justify-content: flex-end;
+        margin-top: 0.5rem;
+        .SignUp-SignIn {
+          text-align: end;
+          width: 100%;
+          opacity: 0.6;
+        }
+        .SignUp-SignIn-text {
+          min-width: 10vw;
+          margin-left: 0.2rem;
+          text-align: end;
+          text-decoration: underline;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+  .SignUp-Page-Right-tab {
+    width: 60vw;
+    background-image: url("/assets/svg/Signin_bg\(faded\).svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+
+    .SignUp-background {
+      background-image: url("/assets/svg/Signin_bg.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 55vw;
+      height: 100vh;
+      position: absolute;
+      right: 0;
+    }
+    .SignUp-text-message {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: rgb(255, 247, 247);
+      z-index: 100;
+      width: 100%;
+      height: 100vh;
+      position: absolute;
+      font-size: 3rem;
+      left: 13%;
+    }
+  }
+}
