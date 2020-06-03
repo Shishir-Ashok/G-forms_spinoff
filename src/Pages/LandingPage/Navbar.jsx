@@ -15,7 +15,6 @@ export default function Navbar() {
                 <NavLink exact activeClassName='linkActive' to='/'>About</NavLink>
                 <NavLink exact activeClassName='linkActive' to='/'>Contact</NavLink>
                 <NavLink exact activeClassName='linkActive' to='/'>Sign In</NavLink>
-                {/* <NavLink to=''>         </NavLink> */}
                 </div>
             </div>
             
