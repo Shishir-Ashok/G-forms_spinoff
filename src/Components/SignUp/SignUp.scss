@@ -73,6 +73,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
+    pointer-events: none;
 
     .SignUp-background {
       background-image: url("/assets/svg/Signin_bg.svg");
