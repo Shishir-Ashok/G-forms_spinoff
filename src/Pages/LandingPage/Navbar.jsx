@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <div className="Main">
+    <div className="Navbar-Main">
       <div className="navbar">
         <div className="navbarLeft">
           <span></span>

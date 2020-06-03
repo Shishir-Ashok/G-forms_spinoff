@@ -11,7 +11,8 @@
   z-index: 70;
   .OptionalNavbar-navbarLeft {
     display: flex;
-    margin-left: 5rem;
+
+    margin-left: 12rem;
     width: 100%;
     h3 {
       display: flex;
@@ -29,6 +30,7 @@
   }
   .OptionalNavbar-navbarRight {
     display: flex;
+    padding-left: 150px;
     justify-content: space-evenly;
     width: 40vw;
 

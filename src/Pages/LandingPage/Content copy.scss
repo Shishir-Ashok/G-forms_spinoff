@@ -1,4 +1,4 @@
-.landingImage {
+.Content-Main {
   font-family: "Montserrat";
   height: 100vh;
 }
@@ -11,22 +11,21 @@
     "rect rect";
 }
 
+
 .landingImage {
-  background: url("/assets/svg/Landing.svg") no-repeat center center;
+  background-image: url("/assets/svg/Landing.svg");
+  background-repeat: no-repeat;
   background-size: cover;
-  pointer-events: none;
-  cursor: default;
-  width: 1920px;
-  height: 1080px;
+  z-index: 1;
 }
 
 .welcome {
   display: grid;
-  grid-template-rows: 500px 500px;
-  grid-template-columns: 500px 500px 500px;
+  grid-template-rows: 500px 100px;
+  grid-template-columns: 1fr 300px;
   grid-template-areas:
-    ". . wc"
-    ". . gs";
+    "wc sq"
+    "gs .";
 
   grid-gap: 0px;
   padding: 0px;
@@ -54,9 +53,10 @@
   color: white;
   margin-top: 10px;
   font-weight: 200;
-  cursor: pointer;
   font-size: 24px;
-  :hover{
-    cursor: pointer;
-  }
+}
+
+
+.getStarted:hover {
+  cursor: pointer;
 }
