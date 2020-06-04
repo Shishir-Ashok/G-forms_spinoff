@@ -55,7 +55,7 @@ export default function OptionalNavbar() {
         <NavLink 
           exact 
           activeClassName="linkActive" 
-          to="/" 
+          to="/signUp" 
           style={textColorStyle}
         >
           Sign Up

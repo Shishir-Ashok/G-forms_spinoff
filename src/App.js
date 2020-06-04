@@ -14,14 +14,14 @@ export class App extends Component {
           <Route exact path="/" component={LandingPage} />
           <Route
             exact
-            path="/SignIn"
+            path="/signIn"
             render={(routerProps) => (
               <SignIn isSignIn={true} {...routerProps} />
             )}
           />
           <Route
             exact
-            path="/SignUp"
+            path="/signUp"
             render={(routerProps) => (
               <SignIn isSignIn={false} {...routerProps} />
             )}

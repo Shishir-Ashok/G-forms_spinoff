@@ -24,9 +24,11 @@ export default function SignIn(props) {
   const username = useInput("");
   const password = useInput("");
 
-  props.isSignin ? console.log("YES") : console.log("NOPE");
+  console.log(props.isSignIn);
+   
   return (
     <>
+      {`${props.isSignIn}` ? 
       <div className="Page SignIn-Page-Container">
         <div className="SignIn-Page-Left-tab">
           <div className="SignIn-form">
@@ -62,6 +64,8 @@ export default function SignIn(props) {
           </div>
         </div>
       </div>
+      :
+      <h1>asdf</h1>}
     </>
   );
 }
