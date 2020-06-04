@@ -24,7 +24,7 @@ export default function SignIn(props) {
   const username = useInput("");
   const password = useInput("");
 
-  {`${props.isSignin}`?console.log("YES"):console.log("NOPE")};
+  props.isSignin ? console.log("YES") : console.log("NOPE");
   return (
     <>
       <div className="Page SignIn-Page-Container">
