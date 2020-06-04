@@ -25,47 +25,48 @@ export default function SignIn(props) {
   const password = useInput("");
 
   console.log(props.isSignIn);
-   
+
   return (
     <>
-      {`${props.isSignIn}` ? 
-      <div className="Page SignIn-Page-Container">
-        <div className="SignIn-Page-Left-tab">
-          <div className="SignIn-form">
-            <div className="SignIn-Heading">Sign In</div>
-            <TextField
-              label="Username"
-              {...username}
-              className={classes.textField}
-              variant="outlined"
-            ></TextField>
-            <TextField
-              type="password"
-              label="Password"
-              {...password}
-              className={classes.textField}
-              variant="outlined"
-            ></TextField>
-            <div className="SignIn-Forgot">Forgot Password?</div>
-            <div className="SignIn-Button">Sign In</div>
+      {props.isSignIn ? (
+        <div className="Page SignIn-Page-Container">
+          <div className="SignIn-Page-Left-tab">
+            <div className="SignIn-form">
+              <div className="SignIn-Heading">Sign In</div>
+              <TextField
+                label="Username"
+                {...username}
+                className={classes.textField}
+                variant="outlined"
+              ></TextField>
+              <TextField
+                type="password"
+                label="Password"
+                {...password}
+                className={classes.textField}
+                variant="outlined"
+              ></TextField>
+              <div className="SignIn-Forgot">Forgot Password?</div>
+              <div className="SignIn-Button">Sign In</div>
 
-            <div className="SignIn-New">
-              <div className="SignIn-SignIn">Don't have an account?</div>
-              <div className="SignIn-SignIn-text">Sign Up</div>
+              <div className="SignIn-New">
+                <div className="SignIn-SignIn">Don't have an account?</div>
+                <div className="SignIn-SignIn-text">Sign Up</div>
+              </div>
+            </div>
+          </div>
+          <div className="SignIn-Page-Right-tab">
+            <div className="SignIn-text-message">
+              Creating forms <br />
+              is now easier
+              <br />
+              than ever
             </div>
           </div>
         </div>
-        <div className="SignIn-Page-Right-tab">
-          <div className="SignIn-text-message">
-            Creating forms <br />
-            is now easier
-            <br />
-            than ever
-          </div>
-        </div>
-      </div>
-      :
-      <h1>asdf</h1>}
+      ) : (
+        <h1>asdf</h1>
+      )}
     </>
   );
 }
