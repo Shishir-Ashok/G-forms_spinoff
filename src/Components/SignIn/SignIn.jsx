@@ -1,7 +1,7 @@
 import React from "react";
 import { useInput } from "../../Hooks/useInput";
 import { TextField, makeStyles } from "@material-ui/core";
-import "./SignUp.scss";
+import "./SignIn.scss";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,17 +19,18 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "1.3rem",
   },
 }));
-export default function SignUp() {
+export default function SignIn(props) {
   const classes = useStyles();
   const username = useInput("");
   const password = useInput("");
 
+  {`${props.isSignin}`?console.log("YES"):console.log("NOPE")};
   return (
     <>
-      <div className="Page SignUp-Page-Container">
-        <div className="SignUp-Page-Left-tab">
-          <div className="SignUp-form">
-            <div className="SignUp-Heading">Sign In</div>
+      <div className="Page SignIn-Page-Container">
+        <div className="SignIn-Page-Left-tab">
+          <div className="SignIn-form">
+            <div className="SignIn-Heading">Sign In</div>
             <TextField
               label="Username"
               {...username}
@@ -43,17 +44,17 @@ export default function SignUp() {
               className={classes.textField}
               variant="outlined"
             ></TextField>
-            <div className="SignUp-Forgot">Forgot Password?</div>
-            <div className="SignUp-Button">Sign In</div>
+            <div className="SignIn-Forgot">Forgot Password?</div>
+            <div className="SignIn-Button">Sign In</div>
 
-            <div className="SignUp-New">
-              <div className="SignUp-SignIn">Don't have an account?</div>
-              <div className="SignUp-SignIn-text">Sign Up</div>
+            <div className="SignIn-New">
+              <div className="SignIn-SignIn">Don't have an account?</div>
+              <div className="SignIn-SignIn-text">Sign Up</div>
             </div>
           </div>
         </div>
-        <div className="SignUp-Page-Right-tab">
-          <div className="SignUp-text-message">
+        <div className="SignIn-Page-Right-tab">
+          <div className="SignIn-text-message">
             Creating forms <br />
             is now easier
             <br />

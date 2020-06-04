@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import LandingPage from "./Pages/LandingPage/LandingPage.jsx";
 import { Switch, Route } from "react-router";
-import SignUp from "./Components/SignUp/SignUp";
+import SignIn from "./Components/SignIn/SignIn.jsx";
 import OptionalNavbar from "./Components/OptionalNavbar/OptionalNavbar";
 
 export class App extends Component {
@@ -14,16 +14,16 @@ export class App extends Component {
           <Route exact path="/" component={LandingPage} />
           <Route
             exact
-            path="/signUp"
+            path="/SignIn"
             render={(routerProps) => (
-              <SignUp isSignIn={true} {...routerProps} />
+              <SignIn isSignIn={true} {...routerProps} />
             )}
           />
           <Route
             exact
-            path="/logIn"
+            path="/SignUp"
             render={(routerProps) => (
-              <SignUp isSignIn={false} {...routerProps} />
+              <SignIn isSignIn={false} {...routerProps} />
             )}
           />
         </Switch>

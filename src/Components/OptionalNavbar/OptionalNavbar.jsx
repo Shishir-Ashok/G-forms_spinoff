@@ -4,8 +4,15 @@ import { NavLink, useLocation } from "react-router-dom";
 
 export default function OptionalNavbar() {
   const location = useLocation();
+
+  const signInActive = 
+    location.pathname === "/signIn";
+
+
+
   const textColorStyle =
-    location.pathname !== "/signUp" ? { color: "black" } : {};
+    location.pathname !== "/signIn" ? { color: "black" } : {};
+
 
   const onScrollNavbar = (e) => {
     console.log("scrolling", e);
@@ -44,14 +51,23 @@ export default function OptionalNavbar() {
         >
           About
         </NavLink>
-        <NavLink
-          exact
-          activeClassName="linkActive"
-          to="/signUp"
+        {signInActive?
+        <NavLink 
+          exact 
+          activeClassName="linkActive" 
+          to="/" 
           style={textColorStyle}
         >
           Sign Up
-        </NavLink>
+        </NavLink> :
+        <NavLink 
+          exact 
+          activeClassName="linkActive" 
+          to="/signIn" 
+          style={textColorStyle}
+        >
+          Sign In
+        </NavLink>}
       </div>
     </div>
   );

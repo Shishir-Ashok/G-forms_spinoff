@@ -1,6 +1,6 @@
 import React from "react";
-// import Navbar from './Navbar.jsx';
-import "./Content.scss";
+import "./LandingPage.scss";
+
 export default function LandingPage() {
   return (
     <div className="Page landingImage">
