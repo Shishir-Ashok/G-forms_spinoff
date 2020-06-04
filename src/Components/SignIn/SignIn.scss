@@ -84,80 +84,71 @@
   }
 }
 
-
-
-.SignUp-Page-Container{
+.SignUp-Page-Container {
   height: 100vh;
   width: 100vw;
-  position: absolute;
   font-family: Montserrat;
   background-image: url("/assets/svg/Sign Up.svg");
   background-size: cover;
-  .SignUp-Page-Center{
-    width: 100vw;
-    height: 60vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .SignUp-form {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    
-    .SignUp-form{
+    .SignUp-Heading {
+      font-size: 2rem;
+      text-align: center;
+      position: relative;
+      font-family: Open Sans;
+      font-weight: bolder;
+      padding-bottom: 0.7rem;
+      &::after {
+        content: "";
+        position: absolute;
+        height: 6px;
+        width: 60%;
+        background-color: black;
+        bottom: 0;
+        left: 20%;
+      }
+    }
+    .SignUp-Button {
       display: flex;
-      flex-direction: column;
+      width: 100%;
+      height: 6vh;
+      text-align: center;
+      background-image: linear-gradient(120deg, #5433ff 0%, #20bdff 100%);
       align-items: center;
-      .SignUp-Heading{
-        font-size: 2rem;
-        text-align: center;
-        position: relative;
-        font-family: Open Sans;
-        font-weight: bolder;
-        padding-bottom: 0.7rem;
-        &::after {
-          content: "";
-          position: absolute;
-          height: 6px;
-          width: 60%;
-          background-color: black;
-          bottom: 0;
-          left: 20%;
-        }
+      justify-content: center;
+      color: white;
+      margin-top: 1.2rem;
+      &:hover {
+        cursor: pointer;
       }
-      .SignUp-Button{
-        display: flex;
+    }
+    .SignUp-New {
+      display: flex;
+      width: 100%;
+      justify-content: flex-end;
+      align-content: space-around;
+      margin-top: 0.5rem;
+      .SignUp-SignUp {
+        text-align: end;
+        width: 140%;
+        opacity: 0.6;
+      }
+      .SignUp-SignUp-text {
+        text-align: end;
         width: 100%;
-        height: 6vh;
-        text-align: center;
-        background-image: linear-gradient(120deg, #5433ff 0%, #20bdff 100%);
-        align-items: center;
-        justify-content: center;
-        color: white;
-        margin-top: 1.2rem;
-        &:hover{
+        padding-right: 1rem;
+        text-decoration: underline;
+        &:hover {
           cursor: pointer;
-        }
-      }
-      .SignUp-New{
-        display: flex;
-        width: 100%;
-        justify-content: flex-end;
-        align-content: space-around;
-        margin-top: 0.5rem;
-        .SignUp-SignUp{
-          text-align: end;
-          width: 140%;
-          opacity: 0.6;
-        } 
-        .SignUp-SignUp-text{
-          text-align: end;
-          width: 100%;
-          padding-right: 1rem;
-          text-decoration: underline;
-          &:hover{
-            cursor: pointer;
-          }
         }
       }
     }
   }
-
 }
-

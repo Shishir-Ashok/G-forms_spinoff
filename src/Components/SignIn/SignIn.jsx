@@ -66,45 +66,43 @@ export default function SignIn(props) {
           </div>
         </div>
       ) : (
-          <div className="Page SignUp-Page-Container">
-            <div className="SignUp-Page-Center">
-              <div className="SignUp-form">
-                <div className="SignUp-Heading">Sign Up</div>
-                <TextField
-                  label="Username"
-                  {...username}
-                  className={classes.textField}
-                  variant="outlined"
-                ></TextField>
-                <TextField
-                  label="Email ID"
-                  {...email}
-                  className={classes.textField}
-                  variant="outlined"
-                ></TextField>
-                <TextField
-                  type="password"
-                  label="Password"
-                  {...password}
-                  className={classes.textField}
-                  variant="outlined"
-                ></TextField>
-                <TextField
-                  type="password"
-                  label="Re-enter password"
-                  {...password}
-                  className={classes.textField}
-                  variant="outlined"
-                ></TextField>
-                <div className="SignUp-Button">Sign Up</div>
+        <div className="Page SignUp-Page-Container">
+          <div className="SignUp-form">
+            <div className="SignUp-Heading">Sign Up</div>
+            <TextField
+              label="Username"
+              {...username}
+              className={classes.textField}
+              variant="outlined"
+            ></TextField>
+            <TextField
+              label="Email ID"
+              {...email}
+              className={classes.textField}
+              variant="outlined"
+            ></TextField>
+            <TextField
+              type="password"
+              label="Password"
+              {...password}
+              className={classes.textField}
+              variant="outlined"
+            ></TextField>
+            <TextField
+              type="password"
+              label="Re-enter password"
+              {...password}
+              className={classes.textField}
+              variant="outlined"
+            ></TextField>
+            <div className="SignUp-Button">Sign Up</div>
 
-                <div className="SignUp-New">
-                  <div className="SignUp-SignUp">Already have an account?</div>
-                    <div className="SignUp-SignUp-text">Sign In</div>
-                </div>
-              </div>
+            <div className="SignUp-New">
+              <div className="SignUp-SignUp">Already have an account?</div>
+              <div className="SignUp-SignUp-text">Sign In</div>
             </div>
           </div>
+        </div>
       )}
     </>
   );
