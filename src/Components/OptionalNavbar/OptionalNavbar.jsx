@@ -1,8 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./OptinalNavbar.scss";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 export default function OptionalNavbar() {
+  const location = useLocation();
+  const textColorStyle =
+    location.pathname !== "/signUp" ? { color: "black" } : {};
+
+  const onScrollNavbar = (e) => {
+    console.log("scrolling", e);
+  };
+  useEffect(() => {
+    document
+      .querySelector(".OptionalNavbar")
+      .addEventListener("scroll", onScrollNavbar);
+    return () => {
+      document
+        .querySelector(".OptionalNavbar")
+        .removeEventListener("scroll", onScrollNavbar);
+    };
+  });
   return (
     <div className="OptionalNavbar">
       <div className="OptionalNavbar-navbarLeft">
@@ -11,13 +28,28 @@ export default function OptionalNavbar() {
         </h3>
       </div>
       <div className="OptionalNavbar-navbarRight">
-        <NavLink exact activeClassName="linkActive" to="/">
+        <NavLink
+          exact
+          activeClassName="linkActive"
+          to="/"
+          style={textColorStyle}
+        >
           Home
         </NavLink>
-        <NavLink exact activeClassName="linkActive" to="/">
+        <NavLink
+          exact
+          activeClassName="linkActive"
+          to="/"
+          style={textColorStyle}
+        >
           About
         </NavLink>
-        <NavLink exact activeClassName="linkActive" to="/signUp">
+        <NavLink
+          exact
+          activeClassName="linkActive"
+          to="/signUp"
+          style={textColorStyle}
+        >
           Sign Up
         </NavLink>
       </div>
