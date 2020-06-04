@@ -71,21 +71,6 @@
   }
   .SignUp-Page-Right-tab {
     width: 60vw;
-    background-image: url("/assets/svg/Signin_bg\(faded\).svg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: relative;
-    pointer-events: none;
-
-    .SignUp-background {
-      background-image: url("/assets/svg/Signin_bg.svg");
-      background-size: cover;
-      background-repeat: no-repeat;
-      width: 55vw;
-      height: 100vh;
-      position: absolute;
-      right: 0;
-    }
     .SignUp-text-message {
       display: flex;
       justify-content: center;
@@ -94,9 +79,7 @@
       z-index: 100;
       width: 100%;
       height: 100vh;
-      position: absolute;
       font-size: 3rem;
-      left: 13%;
     }
   }
 }

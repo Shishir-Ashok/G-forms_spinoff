@@ -53,7 +53,6 @@ export default function SignUp() {
           </div>
         </div>
         <div className="SignUp-Page-Right-tab">
-          <div className="SignUp-background"></div>
           <div className="SignUp-text-message">
             Creating forms <br />
             is now easier
