@@ -17,7 +17,7 @@ export default function OptionalNavbar() {
         <NavLink exact activeClassName="linkActive" to="/">
           About
         </NavLink>
-        <NavLink exact activeClassName="linkActive" to="/logIn">
+        <NavLink exact activeClassName="linkActive" to="/signUp">
           Sign Up
         </NavLink>
       </div>

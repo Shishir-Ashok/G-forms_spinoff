@@ -4,3 +4,13 @@
   margin: 0;
   padding: 0;
 }
+
+.Page {
+  opacity: 0;
+  animation: fade-in 0.5s ease-in forwards;
+}
+@keyframes fade-in {
+  to {
+    opacity: 1;
+  }
+}

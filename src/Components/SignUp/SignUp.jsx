@@ -2,7 +2,6 @@ import React from "react";
 import { useInput } from "../../Hooks/useInput";
 import { TextField, makeStyles } from "@material-ui/core";
 import "./SignUp.scss";
-import OptionalNavbar from "../OptionalNavbar/OptionalNavbar";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -27,8 +26,7 @@ export default function SignUp() {
 
   return (
     <>
-      <OptionalNavbar />
-      <div className="SignUp-Page-Container">
+      <div className="Page SignUp-Page-Container">
         <div className="SignUp-Page-Left-tab">
           <div className="SignUp-form">
             <div className="SignUp-Heading">Sign In</div>
