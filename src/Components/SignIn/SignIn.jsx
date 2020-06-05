@@ -24,7 +24,7 @@ export default function SignIn(props) {
   const username = useInput("");
   const password = useInput("");
   const email = useInput("");
-
+  console.log("it's working");
   console.log(props.isSignIn);
 
   return (
