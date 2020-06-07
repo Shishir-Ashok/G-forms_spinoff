@@ -5,21 +5,21 @@ import { NavLink, useLocation } from "react-router-dom";
 export default function OptionalNavbar(props) {
   const location = useLocation();
 
-  const signInActive = 
-    location.pathname === "/signIn";
-
-
+  const signInActive = location.pathname === "/signIn";
 
   const textColorStyle =
-    !props.isDashboard && location.pathname !== "/signIn" ? { color: "black" } : {};
-
+    !location.pathname === "/dashboard" && location.pathname !== "/signIn"
+      ? { color: "black" }
+      : {};
 
   const onScrollNavbar = (e) => {
     console.log("scrolling", e);
   };
 
-  const changeBg = 
-    props.isDashboard && {background: "black", "borderRadius": "0 0 1rem 1rem" }
+  const changeBg = location.pathname === "/dashboard" && {
+    background: "black",
+    borderRadius: "0 0 1rem 1rem",
+  };
 
   useEffect(() => {
     document
@@ -32,7 +32,7 @@ export default function OptionalNavbar(props) {
     };
   });
   return (
-    <div className="OptionalNavbar"  style={changeBg}>
+    <div className="OptionalNavbar" style={changeBg}>
       <div className="OptionalNavbar-navbarLeft">
         <h3 className="Logostyle">
           <span>LOGO</span>
@@ -55,23 +55,25 @@ export default function OptionalNavbar(props) {
         >
           About
         </NavLink>
-        {signInActive?
-        <NavLink 
-          exact 
-          activeClassName="linkActive" 
-          to="/signUp" 
-          style={textColorStyle}
-        >
-          Sign Up
-        </NavLink> :
-        <NavLink 
-          exact 
-          activeClassName="linkActive" 
-          to="/signIn" 
-          style={textColorStyle}
-        >
-          Sign In
-        </NavLink>}
+        {signInActive ? (
+          <NavLink
+            exact
+            activeClassName="linkActive"
+            to="/signUp"
+            style={textColorStyle}
+          >
+            Sign Up
+          </NavLink>
+        ) : (
+          <NavLink
+            exact
+            activeClassName="linkActive"
+            to="/signIn"
+            style={textColorStyle}
+          >
+            Sign In
+          </NavLink>
+        )}
       </div>
     </div>
   );
