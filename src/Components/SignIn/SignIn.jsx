@@ -5,6 +5,7 @@ import { TextField, makeStyles } from "@material-ui/core";
 import "./SignIn.scss";
 import { BASE_URL } from "../../Utils/apitUtils";
 import jwt from "../../Utils/jwt";
+import { toast } from "react-toastify";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -41,8 +42,12 @@ export default function SignIn(props) {
     try {
       const resp = await axios.post(apiUrl, { ...body });
       jwt.setJWt(resp.data.token);
+      toast.success("Thanks for registering!");
     } catch (err) {
-      console.log(err);
+      console.log(err.response);
+      if (err.response) {
+        toast.error(err.response.data.message);
+      } else toast.error("Something went wrong!");
     }
   };
   const handleLogin = async () => {
@@ -54,8 +59,10 @@ export default function SignIn(props) {
     try {
       const resp = await axios.post(apiUrl, { ...body });
       jwt.setJWt(resp.data.token);
+      toast.success("Logged in Successfully!");
     } catch (err) {
-      console.log(err);
+      if (err.response) toast.error(err.response.data.message);
+      else toast.error("Something went wrong!");
     }
   };
   return (

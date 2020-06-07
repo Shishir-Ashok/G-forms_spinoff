@@ -52,6 +52,10 @@
         align-items: center;
         color: white;
         margin-top: 0.7rem;
+        &:hover,
+        &:focus {
+          cursor: pointer;
+        }
       }
       .SignIn-New {
         display: flex;
