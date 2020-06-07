@@ -15,6 +15,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(3),
   },
   textField: {
+    fontFamily: "Open Sans",
     width: "32ch",
     marginTop: "1.3rem",
   },
@@ -23,6 +24,7 @@ export default function SignIn(props) {
   const classes = useStyles();
   const username = useInput("");
   const password = useInput("");
+  const repassword = useInput("");
   const email = useInput("");
   console.log("it's working");
   console.log(props.isSignIn);
@@ -91,7 +93,7 @@ export default function SignIn(props) {
             <TextField
               type="password"
               label="Re-enter password"
-              {...password}
+              {...repassword}
               className={classes.textField}
               variant="outlined"
             ></TextField>
