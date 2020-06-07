@@ -17,8 +17,8 @@ export default function OptionalNavbar(props) {
   };
 
   const changeBg = location.pathname === "/dashboard" && {
-    background: "black",
-    borderRadius: "0 0 1rem 1rem",
+    background: "#18124C",
+    borderRadius: "0 0 1.5rem 1.5rem",
   };
 
   useEffect(() => {

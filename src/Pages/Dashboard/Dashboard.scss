@@ -1,26 +1,53 @@
+.Dasboard-image{
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(180deg, #5433ff 0%, #20bdff 100%);
+  position: absolute;
+  z-index: -3;
+}
+
 .Dashboard-grid {
   display: grid;
-  grid-template-columns: 350px auto;
-  grid-template-rows: 100px 80px 700px 100px;
+  grid-template-columns: 21.5% auto;
+  grid-template-rows: 11.5% 78% 10.5%;
   grid-template-areas:
-    ".      heading"
+    ".  ."
     "left   content"
     "footer footer";
   width: 100vw;
   height: 100vh;
+  font-family: "Open Sans";
   .Left-Sidebar {
     display: grid;
     grid-area: left;
     justify-content: center;
+    margin-top: 5rem;
     .Left-Sidebar-List li {
-      margin-top: 1rem;
+      padding-bottom: 2.5rem;
+      text-align: center;
       list-style-type: none;
+      a {
+        text-decoration: none;
+        color: white;
+        font-size: 26px;
+      }
     }
-    .Left-Sidebar-List a {
-      text-decoration: none;
-      color: black;
-      font-size: 40px;
-      font-family: "Open Sans";
+  }
+  .Right-Grid{
+    grid-area: content;
+    background: white;
+    display: grid;
+    grid-template-rows: 15% auto;
+    grid-template-areas: 
+      "rightTop"
+      "rightBottom";
+    border-radius: 3.5rem;
+    z-index: -2;
+
+    .Right-Heading{
+      
+      grid-area: rightTop;
+      font-family: Montserrat;
     }
   }
 }
