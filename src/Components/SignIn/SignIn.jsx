@@ -1,7 +1,10 @@
 import React from "react";
 import { useInput } from "../../Hooks/useInput";
+import axios from "axios";
 import { TextField, makeStyles } from "@material-ui/core";
 import "./SignIn.scss";
+import { BASE_URL } from "../../Utils/apitUtils";
+import jwt from "../../Utils/jwt";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,19 +19,45 @@ const useStyles = makeStyles((theme) => ({
   },
   textField: {
     fontFamily: "Open Sans",
-    width: "32ch",
+    width: "41ch",
     marginTop: "1.3rem",
   },
 }));
+
 export default function SignIn(props) {
   const classes = useStyles();
   const username = useInput("");
   const password = useInput("");
   const repassword = useInput("");
   const email = useInput("");
-  console.log("it's working");
-  console.log(props.isSignIn);
-
+  const handleSignUp = async () => {
+    const body = {
+      username: username.value,
+      password: password.value,
+      passwordConfirm: repassword.value,
+      email: email.value,
+    };
+    const apiUrl = BASE_URL + "/users/signup";
+    try {
+      const resp = await axios.post(apiUrl, { ...body });
+      jwt.setJWt(resp.data.token);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  const handleLogin = async () => {
+    const body = {
+      username: username.value,
+      password: password.value,
+    };
+    const apiUrl = BASE_URL + "/users/login";
+    try {
+      const resp = await axios.post(apiUrl, { ...body });
+      jwt.setJWt(resp.data.token);
+    } catch (err) {
+      console.log(err);
+    }
+  };
   return (
     <>
       {props.isSignIn ? (
@@ -50,7 +79,9 @@ export default function SignIn(props) {
                 variant="outlined"
               ></TextField>
               <div className="SignIn-Forgot">Forgot Password?</div>
-              <div className="SignIn-Button">Sign In</div>
+              <div onClick={handleLogin} className="SignIn-Button">
+                Sign In
+              </div>
 
               <div className="SignIn-New">
                 <div className="SignIn-SignIn">Don't have an account?</div>
@@ -97,7 +128,9 @@ export default function SignIn(props) {
               className={classes.textField}
               variant="outlined"
             ></TextField>
-            <div className="SignUp-Button">Sign Up</div>
+            <div onClick={handleSignUp} className="SignUp-Button">
+              Sign Up
+            </div>
 
             <div className="SignUp-New">
               <div className="SignUp-SignUp">Already have an account?</div>
