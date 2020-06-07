@@ -31,8 +31,9 @@ export default function OptionalNavbar(props) {
         .removeEventListener("scroll", onScrollNavbar);
     };
   });
+  console.log(changeBg);
   return (
-    <div className="OptionalNavbar" style={changeBg}>
+    <div className="OptionalNavbar" style={changeBg ? changeBg : {}}>
       <div className="OptionalNavbar-navbarLeft">
         <h3 className="Logostyle">
           <span>LOGO</span>
