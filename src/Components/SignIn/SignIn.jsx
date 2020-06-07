@@ -6,6 +6,8 @@ import "./SignIn.scss";
 import { BASE_URL } from "../../Utils/apitUtils";
 import jwt from "../../Utils/jwt";
 import { toast } from "react-toastify";
+import { useDispatch } from "react-redux";
+import { setNavbarColor } from "../../actions";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -31,6 +33,8 @@ export default function SignIn(props) {
   const password = useInput("");
   const repassword = useInput("");
   const email = useInput("");
+  const dispatch = useDispatch();
+  dispatch(setNavbarColor(props.isSignIn ? "white" : "black"));
   const handleSignUp = async () => {
     const body = {
       username: username.value,
@@ -39,12 +43,12 @@ export default function SignIn(props) {
       email: email.value,
     };
     const apiUrl = BASE_URL + "/users/signup";
+
     try {
       const resp = await axios.post(apiUrl, { ...body });
       jwt.setJWt(resp.data.token);
       toast.success("Thanks for registering!");
     } catch (err) {
-      console.log(err.response);
       if (err.response) {
         toast.error(err.response.data.message);
       } else toast.error("Something went wrong!");
@@ -65,6 +69,7 @@ export default function SignIn(props) {
       else toast.error("Something went wrong!");
     }
   };
+
   return (
     <>
       {props.isSignIn ? (

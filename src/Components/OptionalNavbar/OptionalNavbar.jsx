@@ -1,37 +1,17 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./OptinalNavbar.scss";
 import { NavLink, useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
 
-export default function OptionalNavbar(props) {
+export default function OptionalNavbar() {
   const location = useLocation();
-
   const signInActive = location.pathname === "/signIn";
-
-  const textColorStyle =
-    !location.pathname === "/dashboard" && location.pathname !== "/signIn"
-      ? { color: "black" }
-      : {};
-
-  const onScrollNavbar = (e) => {
-    console.log("scrolling", e);
-  };
-
+  const textColorStyle = useSelector((state) => state.navbarReducer);
   const changeBg = location.pathname === "/dashboard" && {
     background: "#18124C",
     borderRadius: "0 0 1.5rem 1.5rem",
   };
 
-  useEffect(() => {
-    document
-      .querySelector(".OptionalNavbar")
-      .addEventListener("scroll", onScrollNavbar);
-    return () => {
-      document
-        .querySelector(".OptionalNavbar")
-        .removeEventListener("scroll", onScrollNavbar);
-    };
-  });
-  console.log(changeBg);
   return (
     <div className="OptionalNavbar" style={changeBg ? changeBg : {}}>
       <div className="OptionalNavbar-navbarLeft">
