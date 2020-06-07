@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import "./OptinalNavbar.scss";
 import { NavLink, useLocation } from "react-router-dom";
 
-export default function OptionalNavbar() {
+export default function OptionalNavbar(props) {
   const location = useLocation();
 
   const signInActive = 
@@ -11,12 +11,16 @@ export default function OptionalNavbar() {
 
 
   const textColorStyle =
-    location.pathname !== "/signIn" ? { color: "black" } : {};
+    !props.isDashboard && location.pathname !== "/signIn" ? { color: "black" } : {};
 
 
   const onScrollNavbar = (e) => {
     console.log("scrolling", e);
   };
+
+  const changeBg = 
+    props.isDashboard && {background: "black", "borderRadius": "0 0 1rem 1rem" }
+
   useEffect(() => {
     document
       .querySelector(".OptionalNavbar")
@@ -28,7 +32,7 @@ export default function OptionalNavbar() {
     };
   });
   return (
-    <div className="OptionalNavbar">
+    <div className="OptionalNavbar"  style={changeBg}>
       <div className="OptionalNavbar-navbarLeft">
         <h3 className="Logostyle">
           <span>LOGO</span>

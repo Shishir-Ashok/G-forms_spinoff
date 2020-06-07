@@ -1,0 +1,25 @@
+.Dashboard-grid {
+    display: grid;
+    grid-template-columns: 350px auto;
+    grid-template-rows: 100px 80px 700px 100px;
+    grid-template-areas: 
+        ".      ."
+        ".      heading"
+        "left   content"
+        "footer footer";
+    .Left-Sidebar{
+        display: grid;
+        grid-area: left;
+        justify-content: center;
+        .Left-Sidebar-List li{
+            margin-top: 1rem;
+            list-style-type: none;
+        }
+        .Left-Sidebar-List a{
+            text-decoration: none;
+            color: black;
+            font-size: 40px;
+            font-family: Open Sans;
+        }
+    }
+}
