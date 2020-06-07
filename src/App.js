@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import "./App.css";
 import LandingPage from "./Pages/LandingPage/LandingPage.jsx";
 import { Switch, Route } from "react-router";
@@ -41,6 +41,26 @@ export class App extends Component {
       </>
     );
   }
+import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
+toast.configure();
+export default function App() {
+  return (
+    <>
+      <OptionalNavbar />
+      <Switch>
+        <Route exact path="/" component={LandingPage} />
+        <Route
+          exact
+          path="/signIn"
+          render={(routerProps) => <SignIn isSignIn={true} {...routerProps} />}
+        />
+        <Route
+          exact
+          path="/signUp"
+          render={(routerProps) => <SignIn isSignIn={false} {...routerProps} />}
+        />
+      </Switch>
+    </>
+  );
 }
-
-export default App;
