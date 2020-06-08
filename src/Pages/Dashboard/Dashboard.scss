@@ -22,14 +22,17 @@
     grid-area: left;
     justify-content: center;
     margin-top: 5rem;
-    .Left-Sidebar-List li {
-      padding-bottom: 2.5rem;
-      text-align: center;
-      list-style-type: none;
-      a {
+    .Left-Sidebar-List {
+      .headers h3{
+        padding-bottom: 2.5rem;
+        text-align: center;
+        font-weight: 500;
+        background: none;
+        border: none;
+        list-style-type: none;
         text-decoration: none;
         color: white;
-        font-size: 26px;
+        font-size: 1.7rem;
       }
     }
   }
@@ -41,13 +44,16 @@
     grid-template-areas: 
       "rightTop"
       "rightBottom";
-    border-radius: 3.5rem;
+    border-radius: 2.5rem;
     z-index: -2;
 
     .Right-Heading{
-      
+      display: grid;      
       grid-area: rightTop;
-      font-family: Montserrat;
+      align-content: center;
+      margin-left: 6rem;
+      font-size: 3rem;
+      font-family: "Montserrat Medium";
     }
   }
 }
