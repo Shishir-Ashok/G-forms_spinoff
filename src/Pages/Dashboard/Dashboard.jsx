@@ -8,17 +8,17 @@ import { setActiveDashboard } from "../../actions";
 
 export default function Dashboard() {
   
-
+  const dispatch = useDispatch();
+  const activeTab = useSelector((state) => state.dashboardReducer.active);
   let value = "dashboard";
   const display = (e) => {
     console.log("DISPLAY " +e);
     value = e;
+    console.log("VALUE : "+value);
+  dispatch(setActiveDashboard(value));
+  console.log("ACTIVE " +activeTab.active);
   };
-  console.log("VALUE : "+value);
-  const dispatch = useDispatch();
-  console.log(dispatch(setActiveDashboard(value)));
-  const activeTab = useSelector((state) => state.active);
-  console.log("ACTIVE " +activeTab);
+  
   
   
   

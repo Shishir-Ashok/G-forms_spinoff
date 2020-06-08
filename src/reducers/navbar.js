@@ -3,6 +3,7 @@ const intialState = {
 };
 
 const navbarReducer = (state = intialState, action) => {
+  console.log("IN-NAV " + action.type);
   switch (action.type) {
     case "SET_NAV_COLOR":
       return { color: action.payload };
