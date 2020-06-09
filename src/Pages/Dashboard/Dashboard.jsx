@@ -1,7 +1,7 @@
 import React from "react";
 import "./Dashboard.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { setActiveDashboard } from "../../actions";
+import { setActiveDashboard, setNavbarColor } from "../../actions";
 
 
 
@@ -16,8 +16,9 @@ export default function Dashboard() {
     value = e;
     console.log("VALUE : "+value);
   dispatch(setActiveDashboard(value));
-  console.log("ACTIVE " +activeTab.active);
+  console.log("ACTIVE " +activeTab);
   };
+  dispatch(setNavbarColor("white"));
   
   
   

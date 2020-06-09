@@ -7,17 +7,15 @@ export default function OptionalNavbar() {
   const location = useLocation();
   const signInActive = location.pathname === "/signIn";
   const textColorStyle = useSelector((state) => state.navbarReducer);
-  const changeBg = location.pathname === "/dashboard" && {
-    background: "#18124C",
-    borderRadius: "0 0 1.5rem 1.5rem",
-  };
+  // const changeBg = location.pathname === "/dashboard" && {
+  //   background: "#18124C",
+  //   borderRadius: "0 0 1.5rem 1.5rem",
+  // };
 
   return (
-    <div className="OptionalNavbar" style={changeBg ? changeBg : {}}>
+    <div className="OptionalNavbar">
       <div className="OptionalNavbar-navbarLeft">
-        <h3 className="Logostyle">
-          <span>LOGO</span>
-        </h3>
+        <div className="Logostyle" />
       </div>
       <div className="OptionalNavbar-navbarRight">
         <NavLink

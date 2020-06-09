@@ -3,7 +3,7 @@ const initialState = {
 };
 
 const dashboardReducer = (state = initialState, action) => {
-    console.log("INI : "+action.payload);
+    console.log("INI : "+action.type);
     switch (action.type) {
         case "SET_ACTIVE_DASHBOARD":
         return { active: action.payload };

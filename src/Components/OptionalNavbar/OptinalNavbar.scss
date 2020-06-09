@@ -3,6 +3,8 @@
   display: flex;
   justify-content: space-between;
   font-family: Montserrat;
+  font-weight: bold;
+  
   width: 100vw;
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -10,23 +12,20 @@
   z-index: 70;
   .OptionalNavbar-navbarLeft {
     display: flex;
-    margin-left: 12rem;
+    margin-top: 0.2rem;
+    margin-left: 10rem;
     width: 100%;
-    h3 {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 0.6rem 2rem;
-      background-color: black;
-      span {
-        color: white;
-        font-family: montserrat;
-        font-weight: lighter;
-        text-align: center;
-        font-size: 0.8125rem;
-        vertical-align: middle;
+    .Logostyle{
+      background-image: url("/assets/svg/Logo.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 4vh;
+      height: 5vh;
+      &:hover{
+        cursor: pointer;
       }
     }
+    
   }
   .OptionalNavbar-navbarRight {
     display: flex;

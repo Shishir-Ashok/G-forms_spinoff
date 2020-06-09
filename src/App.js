@@ -32,6 +32,8 @@ export default function App() {
             <Dashboard isSignIn={false} {...routerProps} />
           )}
         />
+
+        
       </Switch>
     </>
   );
