@@ -1,26 +1,35 @@
 import React from "react";
-import "./Dashboard.scss";
+import "./DashboardMain.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { setActiveDashboard, setNavbarColor } from "../../actions";
+import Dashboard from "../../Components/DashboardComponents/Dashboard.jsx"
+import Settings from "../../Components/DashboardComponents/Settings";
 
 
 
-
-export default function Dashboard() {
+export default function DashboardMain() {
   
   const dispatch = useDispatch();
   const activeTab = useSelector((state) => state.dashboardReducer.active);
-  let value = "dashboard";
+  let value = "Dashboard";
+
   const display = (e) => {
     console.log("DISPLAY " +e);
     value = e;
     console.log("VALUE : "+value);
-  dispatch(setActiveDashboard(value));
-  console.log("ACTIVE " +activeTab);
+    dispatch(setActiveDashboard(value));
+    console.log("ACTIVE " +activeTab);
   };
+  const getActiveTab = (activeTab) =>{
+    switch(activeTab)
+    {
+      case "Dashboard" : return <Dashboard />
+      case "Settings" : return <Settings />
+      default : return <Dashboard />
+    }
+  }
   dispatch(setNavbarColor("white"));
-  
-  
+    
   
   
   return (
@@ -29,25 +38,25 @@ export default function Dashboard() {
         <div className="Dashboard-grid">
           <div className="Left-Sidebar">
             <div className="Left-Sidebar-List">
-                <div className="headers" onClick={() =>display("dashboard")}>
+                <div className="headers" onClick={() =>display("Dashboard")}>
                   <h3>Dashboard</h3>
                 </div>
-                <div className="headers" onClick={() => display("createform")}>
+                <div className="headers" onClick={() => display("Createform")}>
                   <h3>Create Form</h3>
                 </div>
-                <div className="headers" onClick={() => display("templates")}>
+                <div className="headers" onClick={() => display("Templates")}>
                   <h3>Templates</h3>
                 </div>
-                <div className="headers" onClick={() => display("howtouse")}>
+                <div className="headers" onClick={() => display("Howtouse")}>
                   <h3>How to use</h3>
                 </div>
-                <div className="headers" onClick={() => display("settings")}>
+                <div className="headers" onClick={() => display("Settings")}>
                   <h3>Settings</h3>
                 </div>
             </div>
           </div>
           <div className="Right-Grid">
-            <h1 className="Right-Heading">Username</h1>
+          {getActiveTab(activeTab)}
           </div>
         </div>
     </>

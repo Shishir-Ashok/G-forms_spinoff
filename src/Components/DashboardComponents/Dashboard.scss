@@ -1,0 +1,54 @@
+.Dashboard-Grid{
+    display: grid;
+    grid-template-rows: 15% 45% auto;
+    grid-template-areas: 
+        "heading"
+        "active-forms"
+        "analytics";
+    .Dashboard-header{
+        grid-area: heading;
+        h1{
+            margin: 3.7rem 0 0 3.7rem;
+            font-size: 2.5rem;
+            font-family: "Montserrat";
+        }
+        h1:after {
+            content:' ';
+            display:block;
+            border:0.2vh solid #292E49;
+            width: 15rem;
+        }
+    }
+    .Dashboard-activeForms{
+        grid-area: active-forms;
+        h3{
+            color: #6b6b6b;
+            margin: 1rem 0 0 4.7rem;
+            font-weight: lighter;
+            font-family: "Montserrat";
+            font-size: 1.4rem;
+        }
+        h3:after {
+            content:' ';
+            display:block;
+            width: 7.4rem;
+            border:0.15vh solid #808080;
+        }
+    }
+    .Dashboard-analytics{
+        grid-area: analytics;
+        h3{
+            color: #6b6b6b;
+            margin: 1rem 0 0 4.7rem;
+            font-weight: lighter;
+            font-family: "Montserrat";
+            font-size: 1.4rem;
+        }
+        h3:after {
+            content:' ';
+            display:block;
+            width: 5rem;
+            border:0.15vh solid #808080;
+        }
+    }
+}

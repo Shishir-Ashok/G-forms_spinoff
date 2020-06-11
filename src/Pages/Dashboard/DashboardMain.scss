@@ -23,7 +23,7 @@
     margin-top: 5rem;
     .Left-Sidebar-List {
       .headers h3{
-        padding-bottom: 2.5rem;
+        margin-bottom: 2.5rem;
         text-align: center;
         font-weight: 500;
         background: none;
@@ -32,6 +32,9 @@
         text-decoration: none;
         color: white;
         font-size: 1.7rem;
+        &:hover{
+          cursor: pointer;
+        }
       }
     }
   }
@@ -39,21 +42,8 @@
     grid-area: content;
     background: white;
     display: grid;
-    grid-template-rows: 15% auto;
-    grid-template-areas: 
-      "rightTop"
-      "rightBottom";
+    grid-template-rows: auto;
     border-radius: 2.5rem;
     z-index: -2;
-
-    .Right-Heading{
-      display: grid;      
-      grid-area: rightTop;
-      align-content: center;
-      margin-left: 6rem;
-      font-size: 3rem;
-      color: #292E49;
-      font-family: "Montserrat Medium";
-    }
   }
 }

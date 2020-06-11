@@ -4,7 +4,7 @@ import LandingPage from "./Pages/LandingPage/LandingPage.jsx";
 import { Switch, Route } from "react-router";
 import SignIn from "./Components/SignIn/SignIn.jsx";
 import OptionalNavbar from "./Components/OptionalNavbar/OptionalNavbar";
-import Dashboard from "./Pages/Dashboard/Dashboard";
+import DashboardMain from "./Pages/Dashboard/DashboardMain";
 
 import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
@@ -29,7 +29,7 @@ export default function App() {
           exact
           path="/dashboard"
           render={(routerProps) => (
-            <Dashboard isSignIn={false} {...routerProps} />
+            <DashboardMain isSignIn={false} {...routerProps} />
           )}
         />
 

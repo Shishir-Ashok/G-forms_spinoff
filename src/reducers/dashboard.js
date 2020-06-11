@@ -1,5 +1,5 @@
 const initialState = {
-    active: "dashboard"
+    active: "Dashboard"
 };
 
 const dashboardReducer = (state = initialState, action) => {
