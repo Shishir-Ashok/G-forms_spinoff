@@ -15,7 +15,13 @@ export default function OptionalNavbar() {
   return (
     <div className="OptionalNavbar">
       <div className="OptionalNavbar-navbarLeft">
-        <div className="Logostyle" />
+        <div className="Logostyle" >
+          <NavLink
+            exact
+            activeClassName="activeLogo"
+            to="/"
+            />
+        </div>
       </div>
       <div className="OptionalNavbar-navbarRight">
         <NavLink

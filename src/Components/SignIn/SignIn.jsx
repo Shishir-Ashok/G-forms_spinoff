@@ -63,6 +63,7 @@ export default function SignIn(props) {
     try {
       const resp = await axios.post(apiUrl, { ...body });
       jwt.setJWt(resp.data.token);
+      console.log(resp.data.data);
       toast.success("Logged in Successfully!");
     } catch (err) {
       if (err.response) toast.error(err.response.data.message);
