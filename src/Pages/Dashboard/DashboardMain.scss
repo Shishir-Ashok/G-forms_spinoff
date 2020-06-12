@@ -1,15 +1,6 @@
-.Dasboard-image{
-  width: 100vw;
-  height: 100vh;
-  background-image: linear-gradient(180deg, #292E49 0%, #536976 100%);
-  position: absolute;
-  z-index: -3;
-  &:hover{
-    cursor: pointer;
-  }
-}
-
 .Dashboard-grid {
+  background-image: linear-gradient(180deg, #292e49 0%, #536976 100%);
+
   display: grid;
   grid-template-columns: 21.5% 78%;
   grid-template-rows: 11.5% 88%;
@@ -18,7 +9,7 @@
     "left   content";
   width: 100vw;
   height: 100vh;
-  pointer-events: none;
+  z-index: 1;
   font-family: "Open Sans";
   .Left-Sidebar {
     display: grid;
@@ -26,7 +17,7 @@
     justify-content: center;
     margin-top: 5rem;
     .Left-Sidebar-List {
-      .headers h3{
+      .headers h3 {
         margin-bottom: 2.5rem;
         text-align: center;
         font-weight: 500;
@@ -36,18 +27,18 @@
         text-decoration: none;
         color: white;
         font-size: 1.7rem;
-        &:hover{
+        &:hover {
           cursor: pointer;
         }
       }
     }
   }
-  .Right-Grid{
+  .Right-Grid {
     grid-area: content;
     background: white;
     display: grid;
     grid-template-rows: auto;
     border-radius: 2.5rem;
-    z-index: -2;
+    z-index: 3;
   }
 }
