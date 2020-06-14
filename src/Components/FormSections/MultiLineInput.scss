@@ -1,0 +1,57 @@
+.MultiLine-Input-container {
+  display: flex;
+  border-radius: 1rem;
+  position: relative;
+  width: fit-content;
+  border: 1px solid #c5c5c5;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  justify-content: center;
+  z-index: 0;
+  .MultiLine-Input-header {
+    position: absolute;
+    top: -0.7rem;
+    color: #c5c5c5;
+    z-index: 1;
+    background-color: white;
+    font-size: 0.8rem;
+  }
+  .MultiLine-Input {
+    width: 30vw;
+    border: none !important;
+    &:hover {
+      border-bottom: 1px solid black !important;
+    }
+    &:focus {
+      border-bottom: 2px solid #2e47b2 !important;
+      outline: none;
+    }
+  }
+  .MultiLine-Input-image {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.SingleLine-Input {
+  width: 15vw;
+  border: none !important;
+  &:hover {
+    border-bottom: 1px solid black !important;
+  }
+  &:focus {
+    border-bottom: 2px solid #2e47b2 !important;
+    outline: none;
+  }
+}
+.Option-Input {
+  width: 8vw;
+  border: none !important;
+  &:hover {
+    border-bottom: 1px solid black !important;
+  }
+  &:focus {
+    border-bottom: 2px solid #2e47b2 !important;
+    outline: none;
+  }
+}
