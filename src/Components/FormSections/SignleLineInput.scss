@@ -1,0 +1,19 @@
+.SLI-heading{
+    margin-top: 2rem;
+    margin-left: 3rem;
+    
+    .SLI-haading-input{
+        background: none;
+        border: none;
+        color: black;
+        &:active{
+            background: blue($color: #000000);
+            &::after{
+                content:' ';
+                display:block;
+                border:0.2vh solid #292E49;
+                width: 15rem;
+            }
+        }
+    }
+}

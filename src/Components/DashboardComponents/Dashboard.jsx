@@ -1,9 +1,11 @@
 import React from "react";
 import './Dashboard.scss';
+import SignleLineInput from "../FormSections/SignleLineInput";
 
 export default function Dashboard() {
     return (
         <>
+            <SignleLineInput />
             <div className="Dashboard-Grid">
                 <div className="Dashboard-header">
                     <h1>My Dashboard</h1>

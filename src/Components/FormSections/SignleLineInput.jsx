@@ -1,38 +1,15 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
+import './SignleLineInput.scss';
+import { useInput } from '../../Hooks/useInput';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
-  textField: {
-    marginLeft: theme.spacing(1),
-    marginRight: theme.spacing(1),
-    width: '25ch',
-  },
-}));
-
-export default function SignleLineInput(props) {
-  const classes = useStyles();
-
-  return (
-    <div className={classes.root}>
-        <div>
-            <TextField
-            id="standard-full-width"
-            // label="Label"
-            style={{ margin: 8 }}
-            placeholder="Placeholder"
-            helperText="Full width!"
-            fullWidth
-            margin="normal"
-            InputLabelProps={{
-                shrink: true,
-            }}
-            />
+export default function SignleLineInput(){
+    // const initial = { name : "Single Line"};
+    const SLI_title = useInput("Signle Line");
+    return(
+        <div className="SLI-heading">
+            <input className="SLI-haading-input" 
+                placeholder={SLI_title.value}
+                />
         </div>
-    </div>
     );
 }

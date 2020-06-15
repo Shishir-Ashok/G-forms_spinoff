@@ -33,8 +33,7 @@ export default function DashboardMain() {
   
   
   return (
-    <>
-      <div className="Dasboard-image" />
+    <div>
         <div className="Dashboard-grid">
           <div className="Left-Sidebar">
             <div className="Left-Sidebar-List">
@@ -59,6 +58,6 @@ export default function DashboardMain() {
           {getActiveTab(activeTab)}
           </div>
         </div>
-    </>
+        </div>
   );
 }
