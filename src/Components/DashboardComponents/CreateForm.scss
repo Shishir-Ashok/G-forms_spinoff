@@ -1,0 +1,12 @@
+.Create-Form-container {
+  display: flex;
+  flex-direction: column;
+  padding-left: 3rem;
+  padding-top: 3rem;
+  overflow: scroll;
+  .Create-Form-header {
+    font-size: 2.1rem;
+    margin-bottom: 3rem;
+    font-weight: 700;
+  }
+}
